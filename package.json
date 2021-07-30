@@ -1,0 +1,26 @@
+{
+  "name": "mayastor-ci-server",
+  "version": "1.0.0",
+  "description": "Project to fetch jira/xray api data",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bhaskarhc/mayastor-ci-server.git"
+  },
+  "author": "bhaskarhc",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bhaskarhc/mayastor-ci-server/issues"
+  },
+  "homepage": "https://github.com/bhaskarhc/mayastor-ci-server#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "dotenv": "^10.0.0",
+    "node-fetch": "^2.6.1",
+    "nodemon": "^2.0.9"
+  }
+}
