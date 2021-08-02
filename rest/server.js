@@ -16,8 +16,6 @@ const PORT = 8080;
 
 // create a route for the app
 app.get('/mayastor', (req, res) => {
-    res.json(AllData)
-
-    // res.send('Hello World');
+    res.json(AllData);
   });
   
