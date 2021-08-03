@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mayastor-ci-server-deployment
+  labels:
+    app: mayastor-ci-server
+  namespace: staging-openebs-ci
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mayastor-ci-server
+  template:
+    metadata:
+      labels:
+        app: mayastor-ci-server 
+    spec:
+      containers:
+      - env:
+        - name: CLIENT_ID
+          value: "AC2B4B4DD6514C109524F67AAFF1B10A"
+        - name: CLIENT_SECRET
+          value: "7b46a11834eb09fdbbb928fa3ba1459ad2d51064e2e1cfcbcff6fba73ea2ebe1"
+        name: mayastor-ci-server
+        image: bhaskarjb/mayastor-ci-server:latest
+        ports:
+        - containerPort: 8080

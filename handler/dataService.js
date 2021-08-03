@@ -27,7 +27,7 @@ function sortGetResponse(resBody) {
                 return "PASSED"
             })()
         }
-        eArry.push(issueStruct)
+        // eArry.push(issueStruct)
         let check = AllData.filter(existing => existing.id == issueStruct.id).length
         if (!check) {
             AllData.push(issueStruct)
