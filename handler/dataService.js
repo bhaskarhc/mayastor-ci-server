@@ -73,7 +73,8 @@ function getTestDetails(jira) {
         } else if (set.includes(keys.branch)) {
             values.branch = set.replace(keys.branch, "")
         } else if (set.includes(keys.imageTag)) {
-            values.imageTag = set.replace(keys.imageTag, "")
+            let tag = set.replace(keys.imageTag, "")
+            values.imageTag = tag.replace(/[^A-Za-z0-9-]/g, "");
         }
     })
     return values
