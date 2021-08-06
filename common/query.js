@@ -31,7 +31,7 @@ module.exports = {
             }
         }`
     },
-    GetTestExecutions:() => {
+    GetTestExecutions: () => {
         return `{
             getTestExecutions(limit: 20) {
                 total
@@ -51,6 +51,41 @@ module.exports = {
                             status{name}
                         }
                     }
+                }
+            }
+        }`
+    },
+    TestExecutionData: () => {
+        return `{
+            getTestExecutions(limit: 20) {
+                total
+                start
+                limit
+                results {
+                    issueId
+                    lastModified
+                    jira(fields: ["description","summary","project"])
+                    testRuns(limit: 50){
+                        total
+                        start
+                        limit
+                        results{
+                            id
+                            unstructured
+                            scenarioType
+                            comment
+                            startedOn
+                            finishedOn
+                            comment
+                            results{
+                                name
+                                log
+                                status{name}
+        
+                            }
+                        }
+                    }
+                    
                 }
             }
         }`

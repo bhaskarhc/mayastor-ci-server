@@ -21,11 +21,11 @@ function main() {
 function updateTestReults() {
     tests.Get().then(r => {
         dataService.sortGetResponse(r)
-    }).then(() =>
-        console.log(AllData.length)
-    ).catch(function (error) {
-        console.log(error);
+    })
+    .catch(function (error) {
+        console.log("\t Error : ",error);
     });
 }
+
 
 main();

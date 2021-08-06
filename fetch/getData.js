@@ -1,11 +1,12 @@
 const query = require('../common/query')
+const auth = require('../auth/auth')
 const axios = require('axios');
 require('dotenv').config
 
 module.exports = {
     Get: function () {
         var data = JSON.stringify({
-            query: query.GetTestExecutions()
+            query: query.TestExecutionData()
         });
 
         var config = {
@@ -20,11 +21,14 @@ module.exports = {
 
         return axios(config)
             .then(function (response) {
-                // console.log(JSON.parse(response.data));
                 return response.data;
             })
             .catch(function (error) {
-                console.log(error);
+                if (error.response.status == 401) {
+                    auth.genToken()
+                } else {
+                    console.log("unable to query Graphql xray endpoint", error)
+                }
             });
 
     }
