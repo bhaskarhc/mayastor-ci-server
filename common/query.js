@@ -64,7 +64,7 @@ module.exports = {
                 results {
                     issueId
                     lastModified
-                    jira(fields: ["description","summary","project"])
+                    jira(fields: ["description","summary","project","key"])
                     testRuns(limit: 50){
                         total
                         start
