@@ -1,3 +1,10 @@
+#custom for ci-server
+Xray_Cloud_GraphQL_API.postman_collection.json
+
+
+
+
+
 # Logs
 logs
 *.log

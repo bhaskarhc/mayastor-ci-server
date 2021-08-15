@@ -48,7 +48,7 @@ function getTestCase(tests) {
             id: test.id,
             startedOn: test.startedOn,
             finishedOn: test.finishedOn,
-            name: test.results[0].name,
+            name: test.unstructured.split('.')[1],
             status: test.results[0].status.name,
             description: test.unstructured,
         }
