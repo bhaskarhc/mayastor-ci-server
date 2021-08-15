@@ -27,7 +27,7 @@ function sortGetResponse(resBody) {
         })(issue.jira)
         issueStruct = {
             issueId: issue.issueId,
-            id: pipe.jira.key,
+            id: issue.jira.key,
             jenkinsLink: genJenkinsLink,
             branch: pipe.branch,
             imageTag: pipe.imageTag,
