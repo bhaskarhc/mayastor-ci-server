@@ -21,8 +21,9 @@ function sortGetResponse(resBody) {
 
         let pipe = getTestDetails(issue.jira)
         const genJenkinsLink = ((jira) => {
+
             let urlRegex = /(https?:\/\/[^ ]*)/;
-            let url = jira.description.match(urlRegex)[1];
+            let url = jira.description == null ? null : jira.description.match(urlRegex)[1];
             return url
         })(issue.jira)
         issueStruct = {
@@ -48,8 +49,8 @@ function getTestCase(tests) {
             id: test.id,
             startedOn: test.startedOn,
             finishedOn: test.finishedOn,
-            name: test.unstructured.split('.')[1],
-            status: test.results[0].status.name,
+            name: test.unstructured == null ? null : test.unstructured.split('.')[1],
+            status: test.results.length == 0 ? null : test.results[0].status.name,
             description: test.unstructured,
         }
         testCaseArray.push(testCase)
